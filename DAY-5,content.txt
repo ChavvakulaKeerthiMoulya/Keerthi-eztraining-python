@@ -1,0 +1,138 @@
+RANDOM FUNCTION:
+----------------------
+
+import random as r
+
+r.sample(x,3)
+
+r.randrange(1,50)
+
+r.shuffle(a)
+ 
+r.choice(a)
+
+r.random()==>values are b/w 0.0 to 1.0
+
+r.choices(a,k=4)
+
+r.randint(10,50)
+
+r.uniform(5,10)==>range and float values
+
+
+==============================================================
+
+To find out all the functions in a module:
+----------------------------------------
+
+z=dir(r)
+>>> print(z)
+
+
+==============================================================
+Display whole year calendar:
+------------------------------
+
+import calendar
+print("full calendar")
+print(calendar.calendar(2023))
+
+--------------------------------------
+
+print("particular month")
+print(calendar.month(2023,2))
+
+---------------------------------------
+
+print("set first day of the week")
+calendar.setfirstdayweekday(calendar.friday)
+print(calendar.month(2023,1))
+
+===============================================================
+display date and time:
+-------------------------
+
+import datetime
+
+a=datetime.datetime.now()
+print(a)
+
+sv=a.strftime("%y")#lower case
+fv=a.strftime("%Y")#upper case
+
+print("year short version:",sv)
+print("year full version:",fv)
+
+===============================================================
+Functions:
+-----------
+classification of functions:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.pre-defined
+2.user-defined
+
+->for code reusability we use functions
+->let's say we want to use particular concept multiple times in
+our program
+
+types:
+------
+1.function without argument and without return value
+2.function without argument and with return value
+3.function with argument and with return value
+4.function with argument and without return value
+
+-----------------------------------------------------------
+definition or description:
+--------------------------
+def sample():
+    print("have a great time")
+    print("on vacation")
+sample()
+
+------------------------------------------------------------
+program:product of 3 numbers in all 4 types
+=================================================================
+programs:
+
+1.7 lemons for each 3 temples program using type-1
+2.find factors of the given number using function type-2
+3.print multiplication of table in type-4
+4.find out sum of digits of the number using type -3
+
+===============================================================
+recursion:
+----------
+->a function which calls itself is called recursive function
+
+->this concept is called recursion
+
+
+def display():
+    n=int(input("enter a number:"))
+    if n==1:
+        display()
+    else:
+        print("over")
+display()
+
+o/p:
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:1
+enter a number:3
+over
+---------------------------------------------------------------
+program:factorial by recursion
+===============================================================
