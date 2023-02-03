@@ -1,0 +1,293 @@
+Dictionary comprehension:
+------------------------------
+d={n:n*n for n in range(1,5)}
+print(d)
+o/p:
+{1: 1, 2: 4, 3: 9, 4: 16}
+----------------------
+old={"rice":60,"dhaal":120,"oil":150}
+new={product:price*5 for (product,price) in old.items()}
+print(new)
+o/p:
+{'rice': 300, 'dhaal': 600, 'oil': 750}
+--------------------------------------
+real={"sam":24,"angel":18,"kumar":35}
+now={name:age for (name,age) in real.items() if age>20}
+print(now)
+o/p:
+{'sam': 24, 'kumar': 35}
+--------------------------------------------------------------------
+create a list with 8 customer name's, display a dictionary which has 
+customer name's along with the discount using random function.
+
+import random
+l=['ram','sita','raju','janu','sam','jam','kaju','veena']
+print(len(l))
+print(l)
+l_dict={names:random.randint(1,100) for names in l}
+print(l_dict)
+
+o/p:
+8
+['ram', 'sita', 'raju', 'janu', 'sam', 'jam', 'kaju', 'veena']
+{'ram': 62, 'sita': 38, 'raju': 97, 'janu': 51, 'sam': 14,
+ 'jam': 62, 'kaju': 99, 'veena': 58}
+-----------------------------------------------------------------------
+l1=[1,2,3,4]
+l2=['ram','sita','raju','ramu']
+d={a:b for (a,b) in zip(l1,l2)}
+print(d)
+o/p:
+{1: 'ram', 2: 'sita', 3: 'raju', 4: 'ramu'}
+------------------------------------------------------------------------
+create 2 list with student name's and another with their marks and 
+create dictionary with subject in percentage
+
+import random
+l1=list(map(str,input('enter names:').split()))
+m=[]
+for i in range(len(l1)):
+    a=(random.randint(300,500)/500)*100
+    m.append(a)
+d={x:y for (x,y) in zip(l1,m)}
+print(d)
+
+o/p:
+enter names:ravi ram ramu setu sita veena reena
+{'ravi': 89.0, 'ram': 75.4, 'ramu': 78.4, 
+'setu': 83.8, 'sita': 85.2, 'veena': 63.4, 'reena': 71.2}
+
+---------------method 2 with marks-----------------------------------
+
+import random
+l1=list(map(str,input('enter names:').split()))
+m=[]
+for i in range(len(l1)):
+    a=(random.randint(300,500))
+    print(a)
+    b=(a/500)*100
+    m.append(b)
+d={x:y for (x,y) in zip(l1,m)}
+print(d)
+
+o/p:
+enter names:ravi ram sita veena reena 
+408
+480
+381
+308
+354
+{'ravi': 81.6, 'ram': 96.0, 'sita': 76.2, 'veena': 61.6, 'reena': 70.8}
+======================================================================
+string:
+-----------------------------------------------------------------------
+>>> s="hi i'm "sita""
+SyntaxError: invalid syntax
+>>> s="hi i\'m \'sita\'"
+>>> s
+"hi i'm 'sita'"
+>>> s="hi i'm sita"
+>>> s
+"hi i'm sita"
+>>> s="hi i\'m sita"
+>>> s
+"hi i'm sita"
+>>> s='hi i'm sita'
+SyntaxError: invalid syntax
+---------------------------------------------------------------------
+s="  keerthi moulya"
+print(s.upper())
+print(s.lower())
+print(s.casefold())
+print(s.capitalize())
+print(s.replace("  ","ch."))
+print(s.strip())
+print(s.split("."))
+print(s.center(20,"*"))
+print(s.count("e"))
+print(s.count("k",3,len(s)))
+print(s.endswith("a",0,len(s)))
+print(s.endswith("e",3,len(s)))
+print(s.find("r",3,len(s)))
+print(s.index("u",6,len(s)))
+print(s.isupper())
+print(s.islower())
+print(s.istitle())
+print(max(s))
+print(min(s))
+print(s.startswith("keerthi,0,len(s)"))
+print(s.rfind("r",0,len(s)))
+
+0/p:
+ KEERTHI MOULYA
+  keerthi moulya
+  keerthi moulya
+  keerthi moulya
+ch.keerthi moulya
+keerthi moulya
+['  keerthi moulya']
+**  keerthi moulya**
+2
+0
+True
+False
+5
+12
+False
+True
+False
+y
+ (space)
+False
+5
+
+-----------------------------------------------------------------------
+immutable:
+-------
+
+r=200
+print(r)
+print(id(r))
+r=r+r
+print(r)
+print(id(r))
+
+o/p:
+200
+1382932368
+400
+1998793022416
+
+mutable:
+-------
+l=[1,2,3,4]
+print(l)
+print(id(l))
+l.append(6)
+print(l)
+print(id(l))
+
+o/p:
+[1, 2, 3, 4]
+1998793595912
+[1, 2, 3, 4, 6]
+1998793595912
+
+----------------------------------------------------------------- 
+1.ckeck whether character in a string is present or not without func.
+
+s=input("string:")
+print(s)
+ch=input("chrt:")
+if ch in s:
+    print("present")
+else:
+    print("not present")
+
+o/p:
+string:rani
+rani
+chrt:i
+present
+
+string:rani
+rani
+chrt:d
+not present
+-----------------------------------
+method-2:
+st=input("string:")
+char=input("char")
+for i in st:
+	if i==char:
+		flag=1
+	else:
+		flag=0
+if flag==1:
+	print("present")
+else:
+	print("not present")
+
+o/p:
+string:keerthi
+g
+not present
+------------------------
+method-3:
+st=input("string:")
+chrt=input("chrt:")
+a="yes"if chrt in st else "no"
+print(a)
+
+o/p:
+string:hvhgc
+chrt:m
+no
+--------------------------------------------------------------
+2.check whether the given number string is palindrome or not.
+
+s=input("string:")
+if s==s[::-1]:
+    print("palindrome")
+else:
+    print("not a palindrome")
+
+o/p:
+string:dad
+palindrome
+
+string:keerthi
+not a palindrome
+
+------------------------------------------------------------------
+3.check if the string contains space or not if yes count number 
+of spaces and print it.
+
+s=input("string:")
+count=0
+for i in s:
+    if i==" ":
+        count+=1
+print(count)
+
+o/p:
+string:fedsf fgd gfg
+2
+
+----------------------------------------------------------------
+vowels:
+
+st=input("string:")
+l=["a","e","i","o","u","A","E","I","O","U"]
+count=0
+for i in st:
+    if i in l:
+        count=count+1
+print(count)
+
+o/p:
+string:dvvdfhyjdhi
+1
+
+---------------------------------------------------------------------
+math module:
+--------------
+import math
+print("ceil 12.4:",math.ceil(12.4))
+print("floor 13.6:",math.floor(13.6))
+print("sqrt 345:",math.sqrt(345))
+print("factorial 4:",math.factorial(4))
+print("power 2,3:",math.pow(2,3))
+print("remainder 10,3:",math.fmod(10,3))
+a,b=divmod(10,3)
+print(a,b)
+o/p:
+ceil 12.4: 13
+floor 13.6: 13
+sqrt 345: 18.57417562100671
+factorial 4: 24
+power 2,3: 8.0
+remainder 10,3: 1.0
+3 1
+
+----------------------------------------------------------------------

@@ -1,0 +1,281 @@
+List:
+-----
+
+L=[1,45,34.5,"samjam"]
+>>> L[2]
+34.5
+>>> L[3]
+'samjam'
+>>> L[2:4]
+[34.5, 'samjam']
+>>> L[0:4]
+[1, 45, 34.5, 'samjam']
+>>> L[2:]
+[34.5, 'samjam']
+>>> L[1:]
+[45, 34.5, 'samjam']
+>>> L[::-1]
+['samjam', 34.5, 45, 1]
+>>> L[::-2]
+['samjam', 45]
+>>> L[-1]
+'samjam'
+>>> L[-4:-1]
+[1, 45, 34.5]
+>>> L[-1:-4]
+[]
+>>> L[-4:0]
+[]
+>>> L[-4:-2]
+[1, 45]
+------------------------------------------------------------------------
+>>> L=[21,3,1,1,4,3,23,43,4,23,21]
+>>> len(L)
+11
+>>> L.append(3)
+>>> L.count(23)
+2
+>>> L.copy()
+[21, 3, 1, 1, 4, 3, 23, 43, 4, 23, 21, 3]
+>>> L.extend([23,21,4,1])
+>>> L.copy()
+[21, 3, 1, 1, 4, 3, 23, 43, 4, 23, 21, 3, 23, 21, 4, 1]
+>>> len(L)
+16
+>>> L.pop(4)
+1
+>>> L.reverse()
+>>> L.copy()
+[1, 4, 21, 23, 3, 21, 23, 4, 43, 23, 3, 4, 1, 23, 3, 21]
+>>>  
+============================================================================================
+1.create a list with 10 items,print the elements one by one.
+2.create a list with 5 float number,find final display of sum and average of list.
+3.after creating a list with 6 elements from the user. extract only even numbers and print.
+----------------------------------------------------------------------------------
+L=[1,2,3,4,5,6,7,8,9,10]
+for j in L:
+    print(j)
+    
+#method-2#using membership operator
+
+for i in range(len(L)):
+    print(i)
+---------------------------------------------------------------    
+#2
+l=[23.3,32.3,34.7,867.5,95.5]
+r=sum(l)
+avg=r/2
+print(r,avg)
+-------------------------------------------------------------------------------
+#3
+l=[1,2,3,4,5,6]
+for i in l:
+    if i%2==0:
+        print(i)
+============================================================================================
+List by code:
+------------
+printing even numbers in the list:
+
+size=int(input("size:"))
+l=[]
+for i in range(size):
+    ele=int(input("element:"))
+    l.append(ele)
+print(l)
+for j in l:
+    if j%2==0:
+        print(j)
+o/p:
+size:5
+element:1
+element:2
+element:3
+element:4
+element:5
+[1, 2, 3, 4, 5]
+2
+4
+============================================================================================
+get a list of no's,return their product if product is less than 750 else print their sum.
+-------------------------------------------------------------------------------- 
+
+n=list(map(int,input("numbers:").split()))
+print(n)
+p=1
+s=0
+for i in n:
+    p=p*i
+    s=s+i
+if int(p)<750:
+    print("product",p)
+else:
+    print("sum",s)
+==========================================================================================
+list comprehension:
+------------------
+
+num=[ele for ele in "keerthi moulya"]
+print(num)
+
+o/p:
+['k', 'e', 'e', 'r', 't', 'h', 'i', ' ', 'm', 'o', 'u', 'l', 'y', 'a']
+--------------------------------------------------------------------------
+
+l=["hyd","vizag","chennai","vijayawada"]
+city=[]
+for n in l:
+    if "h" in n:
+        city.append(n)
+print(city)
+
+o/p:
+['hyd', 'chennai']
+
+
+-------------------------------------------------------------------------------
+
+l1=[2**x for x in range(1,10)]
+print(l1)
+
+o/p:
+
+[2, 4, 8, 16, 32, 64, 128, 256, 512]
+
+----------------------------------------------------------------------------------
+l2=[a for a in range(100,201,10)]
+print(l2)
+
+
+o/p:
+[100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
+
+-------------------------------------------------------------------------------
+l3=[1,2,3,4,5,6,7,8,9]
+l4=[i for i in l3 if i<5]
+print(l4)
+
+o/p:
+
+[1, 2, 3, 4]
+
+=======================================================================================
+set:
+----
+
+>>> s={1,24,34.4,"set"}
+>>> s
+{24, 1, 34.4, 'set'}
+>>> s.add("kaju")
+>>> s
+{1, 34.4, 'set', 'kaju', 24}
+>>> {1, 34.4, 'set', 'kaju', 24}
+{1, 34.4, 'set', 'kaju', 24}
+>>> s.update([2,65,45])
+>>> s
+{1, 34.4, 2, 65, 45, 'set', 'kaju', 24}
+>>> s.discard(65)
+>>> s
+{1, 34.4, 2, 45, 'set', 'kaju', 24}
+>>> s.remove(3)
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    s.remove(3)
+KeyError: 3
+>>> s.discard(3)
+>>> s
+{1, 34.4, 2, 45, 'set', 'kaju', 24}
+>>> s1={1,2,3,4,5}
+>>> s2={4,5,6,7,8,1}
+>>> s1|s2
+{1, 2, 3, 4, 5, 6, 7, 8}
+>>> s1&s2
+{1, 4, 5}
+>>> s1-s2
+{2, 3}
+>>> s2-s1
+{8, 6, 7}
+>>> s1^s2
+{2, 3, 6, 7, 8}
+>>> s1.issuperset(s2)
+False
+>>> s2.issuperset(s1)
+False
+>>> s1={1,2,3,4}
+>>> s2={1,2,3}
+>>> s1.issuperset(s2)
+True
+
+================================================================================
+Tuple:
+------
+
+>>>t=(1,45.3,6,1,"ice")
+>>> type(t)
+<class 'tuple'>
+>>> t.count(4)
+0
+>>> t.count(3)
+0
+>>> t.count("ice")
+1
+>>> t.count(1)
+2
+>>> t.index(4)
+Traceback (most recent call last):
+  File "<pyshell#31>", line 1, in <module>
+    t.index(4)
+ValueError: tuple.index(x): x not in tuple
+>>> t.index(2)
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    t.index(2)
+ValueError: tuple.index(x): x not in tuple
+>>> t.index(6)
+2
+
+===================================================================================
+dictionary:
+-----------
+
+>>> d={1:"one",2:"two"}
+>>> d
+{1: 'one', 2: 'two'}
+>>> type(d)
+<class 'dict'>
+>>> d.keys()
+dict_keys([1, 2])
+>>> d.values()
+dict_values(['one', 'two'])
+>>> d.items()
+dict_items([(1, 'one'), (2, 'two')])
+>>> d[1]
+'one'
+>>> d.get(1)
+'one'
+>>> l=['hi','hello']
+>>> dict.fromkeys(l)
+{'hi': None, 'hello': None}
+>>> dict.fromkeys(l,50)
+{'hi': 50, 'hello': 50}
+>>> {}.fromkeys(l,100)
+{'hi': 100, 'hello': 100}
+>>> s=dict.fromkeys(l,100)
+>>> s
+{'hi': 100, 'hello': 100}
+
+====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+

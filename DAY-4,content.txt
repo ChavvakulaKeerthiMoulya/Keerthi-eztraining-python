@@ -1,0 +1,48 @@
+mutable===>can be changed after creating,address will not change
+-------
+
+->list
+->set
+->dictionary
+
+--------------------------------------------------------------------
+immutable===>cannot be changed after creating,address will be changed
+---------
+
+->int
+->float
+->string
+->bool
+->tuple
+
+-----------------------------------------------------------------------
+1.ckeck whether character in a string is present or not without 
+ func.
+2.check whether the given number string is palindrome or not.
+3.check if the string contains space or not if yes count number 
+of spaces and print it.
+
+-----------------------------------------------------------------
+string:
+-------
+.upper()
+.lower()
+.casefold()
+.capitalize()
+.replace("  ","ch.")
+.strip()
+.split(".")
+.center(20,"*")
+.count("e")
+.count("k",3,len(s))
+.endswith("a",0,len(s))
+.endswith("e",3,len(s))
+.find("r",3,len(s))
+.index("u",6,len(s))
+.isupper()
+.islower()
+.istitle()
+max(s)
+min(s)
+.startswith("keerthi,0,len(s)")
+.rfind("r",0,len(s))
