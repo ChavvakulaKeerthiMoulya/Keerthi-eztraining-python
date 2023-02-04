@@ -1,0 +1,179 @@
+exception handling:
+---------------------
+except:
+~~~~~~
+a=100
+b=0
+try:
+    print(a/b)
+except Exception as e:
+    print("plz note,number cannot be divided by zero",e)
+print("bye")
+
+o/p:
+plz note,number cannot be divided by zero division by zero
+bye
+---------------------------------
+a=100
+b=10
+try:
+    print(a/b)
+except Exception as e:
+    print("plz note,number cannot be divided by zero",e)
+print("bye")
+
+o/p:
+10.0
+bye
+-------------------------------------------------------------
+finally:
+~~~~~~~
+
+a=100
+b=10
+try:
+    print("resource open")
+    print(a/b)
+except Exception as e:
+    print("don't give 2nd number as zero",e)
+finally:
+    print("resource closed")
+
+o/p:
+resource open
+10.0
+resource closed
+--------------------------------------------
+a=100
+b=0
+try:
+    print("resource open")
+    print(a/b)
+except Exception as e:
+    print("don't give 2nd number as zero",e)
+finally:
+    print("resource closed")
+o/p:
+resource open
+don't give 2nd number as zero division by zero
+resource closed
+
+=============================================================
+specific error:
+--------------
+
+a=100
+try:
+    b=int(input("enter the number:"))
+    print("resource open")
+    print(a/b)
+except ZeroDivisionError as e:
+    print("plz note,number cannot be divided by zero",e)
+except ValueError as e:
+    print("Invalid input",e)
+except Exception as e:
+    print("other error",e)
+finally:
+    print("resource closed")
+
+o/p:
+enter the number:0
+resource open
+plz note,number cannot be divided by zero division by zero
+resource closed
+------------------------
+enter the number:uhg
+Invalid input invalid literal for int() with base 10: 'uhg'
+resource closed
+------------------------------------------------------------
+raise error:
+-----------
+x=100
+if x%2!=0:
+    raise Exception("x should be even number")
+else:
+    print("x is even number ,correct")
+
+o/p:
+x is even number ,correct
+----------------------------
+if x=1001
+o/p:
+Traceback (most recent call last):
+  File "C:/Users/HP/OneDrive/Desktop/CRT/DAY-6/raise error.py",
+ line 3, in <module>
+    raise Exception("x should be even number")
+Exception: x should be even number
+
+================================================================
+oops:
+-----
+
+to create a class:
+-----------------
+class computer:     #class definition
+    def config(self):  #config is a function,self is mandatory
+        print("yes")
+lenova=computer()   #object-1
+lenova.config()
+
+dell=computer()     #object-2
+dell.config()
+
+o/p:
+yes
+yes
+
+-------------------------------------------------------------
+constructors:
+------------
+
+class Employee:
+    def __init__(self,name,id):
+        self.id=id
+        self.name=name
+
+    def display(self):
+        print("id:%d \nname:%s"%(self.id,self.name))
+
+emp1=Employee("john",102)
+emp2=Employee("david",103)
+
+emp1.display()
+emp2.display()
+
+
+o/p:
+id:102 
+name:john
+id:103 
+name:david
+--------------------------------------------------------------
+class-variables:
+---------------
+#variables and var. access in class and method
+class computer():
+    a=10
+    b=20
+    print("class variables inside class",a)
+    
+    def config(self):   #config is a function
+        c=100
+        print("yes")
+        print("instance access",self.b)
+lenova=computer()   #object-1
+print(lenova.a)
+print(lenova.a+lenova.b)
+dell=computer()     #object-2
+print("dell",dell.a)
+lenova.config()
+
+o/p:
+class variables inside class 10
+10
+30
+dell 10
+yes
+instance access 20
+
+---------------------------------------------------------------

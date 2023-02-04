@@ -1,0 +1,83 @@
+exception handling :
+---------------------
+when there is exception ,the developer doesnot want interuption or 
+disturbance in the program flow to achieve,this we are using as 
+exception handling. 
+
+->compiler error
+
+->run time error
+---------------------------------------------------------------
+progam for except:
+-----------------
+
+a=100
+b=0
+try:
+    print(a/b)
+except Exception as e:
+    print("plz note,number cannot be divided by zero",e)
+print("bye")
+
+o/p:
+plz note,number cannot be divided by zero division by zero
+bye
+---------------------------------------------------------------
+program for finally:
+--------------------
+a=100
+b=0
+try:
+    print("resource open")
+    print(a/b)
+except Exception as e:
+    print("don't give 2nd number as zero",e)
+finally:
+    print("resource closed")
+o/p:
+resource open
+don't give 2nd number as zero division by zero
+resource closed
+---------------------------------------------------------------
+specific errors:
+-----------------
+type error, int error
+==============================================================
+OOPS:
+-----
+->object oriented programming structure
+
+-> it an efficient concept used in all object oriented 
+programming languages like java ,python
+
+-> for multiple reasons we use oops concepts 
+
+ ex: code reusability
+     data security
+     hiding data
+
+==>class:
+   ------
+-> it a blueprint 
+  ex:  birds,laptops
+
+
+==>object:
+   ------
+
+-> it a thing created based on class
+
+->there are two:state,behaviours
+
+note: one class can has multiple object
+-----
+ex:
+class->birds
+object->parrot,peacock,dove 
+
+class->laptops
+object->hp,lenova,dell,azure
+=============================================================
+
+
+

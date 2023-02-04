@@ -1,0 +1,55 @@
+q1='''what is my date of birth?
+a)12/3/3
+b)12/2/3
+c)12/3/2
+d)12/2/2'''
+
+q2='''who is my fav cricketer?
+a)virat
+b)dhoni
+c)rohith
+d)kapil dev'''
+
+q3='''what is my fav colour?
+a)red
+b)white
+c)black
+d)blue'''
+
+q4='''who is my fav hero?
+a)prabhas
+b)ram charan
+c)allu arjun
+d)mahesh babu'''
+
+q5='''who is my fav subject?
+a)math
+b)english
+c)science
+d)social'''
+
+questions={q1:'b',q2:'b',q3:'c',q4:'c',q5:'a'}
+
+name=input("hi,what's ur name?")
+print("hello",name,"welcome to the quiz")
+score=0
+for i in questions:
+    print()
+    print(i)
+    flag1=input("do u want to skip this ques? (yes/no)")
+    if flag1=="yes":
+        continue
+    ans=input("enter ur answer:")
+    if ans==questions[i]:
+        print("wow!u got one point")
+        score+=1
+        print("ur current score:",score)
+    else:
+        print("wrong answer,u lost 1 mark")
+        print("correct answer:",questions[i])
+        score-=1
+        print("ur current score:",score)
+    flag2=input("do u want to quit?(yes/no)")
+    if flag2=="yes":
+        break
+print("ur total score:",score)
