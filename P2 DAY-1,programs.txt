@@ -1,0 +1,271 @@
+lambda function:
+----------------
+
+L=[1,2,3]
+r=map(lambda x:x+x,L)
+print(list(r))
+
+#map-helps to create iteration ,it returns map ok
+
+res=map(lambda n:pow(n,2),L)
+print(list(res))
+
+name="sam"
+(lambda name:print(name))(name)
+
+o/p:
+===
+
+[2, 4, 6]
+[1, 4, 9]
+sam
+-----------------------------------------------------
+write a program after creating a list with even numbers within
+the range 1-15 now apply lambda function and create a new list 
+which should have square roots of the elements.
+
+#1
+
+R=[2,4,6,8,10,12,14]
+r=map(lambda x:x**(1/2),R)
+print(list(r))
+
+o/p:
+----
+[1.4142135623730951, 2.0, 2.449489742783178, 2.8284271247461903,
+ 3.1622776601683795, 3.4641016151377544, 3.7416573867739413]
+
+#2
+
+l=[]
+for i in range(1,15):
+    if i%2==0:
+        l.append(i)
+r=map(lambda x:pow(x,1/2),l)
+print(list(r))
+o/p:
+----
+[1.4142135623730951, 2.0, 2.449489742783178, 2.8284271247461903,
+ 3.1622776601683795, 3.4641016151377544, 3.7416573867739413]
+
+#3
+
+from math import sqrt
+l=[]
+for i in range(1,15):
+    if i%2==0:
+        l.append(i)
+print(l)
+r=map(lambda x:sqrt(x),l)
+print(list(r))
+o/p:
+--
+[2, 4, 6, 8, 10, 12, 14]
+[1.4142135623730951, 2.0, 2.449489742783178, 2.8284271247461903, 
+3.1622776601683795, 3.4641016151377544, 3.7416573867739413]
+
+=================================================================
+abstraction:
+------------
+
+from abc import ABC,abstractmethod
+
+class abstractdemo(ABC):
+    @abstractmethod
+#called decorator to make the method abstract one
+    def display(self):
+        None
+    @abstractmethod
+    def show(self):
+        None
+class demo(abstractdemo):#changing abstract to concrete
+    def display(self):
+        print("Abstraction method")
+    def show(self):
+        print("2nd function")
+obj=demo()
+obj.display()
+obj.show()
+
+o/p:
+----
+Abstraction method
+2nd function
+================================================================
+inheritances:
+-------------
+#single inheritance
+#one parent and one child class
+#base class
+class parent:
+    def display(self):
+        print("parent class")
+#derived class
+class child(parent): #child inherit properties
+    def show(self):
+        print("child class")
+c=child()
+c.display()
+c.show()
+
+o/p:
+----
+parent class
+child class
+
+#simple program
+
+class A:
+    n=30
+class B(A):
+    def calc(self):
+        c=self.n+70
+        print(c)
+obj=B()
+obj.calc()
+
+o/p:
+----
+100
+
+------------------------------------------------------------
+# multiple inheritance
+#two classes-one child-like mom,dad---child
+#inherits properties of mom and dad
+class mom:
+    def mdisplay(self):
+        print("mom class")
+class dad:
+    def ddisplay(self):
+        print("dad class")
+class child(mom,dad):
+    def cdisplay(self):
+        print("child class")
+obj=child()
+obj.cdisplay()
+obj.mdisplay()
+obj.ddisplay()
+
+o/p:
+----
+child class
+mom class
+dad class
+------------------------------------------------------------
+
+#multi-level inheritance
+class grandparent:
+    def display(self):
+        print("grandparent class")
+class parent(grandparent):
+    def show(self):
+        print("parent class")
+class child(parent):
+    def printing(self):
+        print("child class")
+c=child()
+c.display()
+c.show()
+c.printing()
+
+o/p:
+----
+grandparent class
+parent class
+child class
+--------------------------------------------------------------
+
+#hierarchical inheritance
+#one base class and multiple child class
+#objects should be created for child class individuals
+class parent:
+    def pdisplay(self):
+        print("parent class")
+class child1(parent): 
+    def c1show(self):
+        print("child1 class")
+class child2(parent): 
+    def c2show(self):
+        print("child2 class")
+c1=child1()
+c1.c1show()
+c1.pdisplay()
+c2=child2()
+c2.c2show()
+c2.pdisplay()
+
+o/p:
+---
+child1 class
+parent class
+child2 class
+parent class
+--------------------------------------------------------------
+
+#hybrid inheritance
+class parent:
+    def pdisplay(self):
+        print("parent class")
+class child1(parent): 
+    def c1show(self):
+        print("child1 class")
+class child2(parent): 
+    def c2show(self):
+        print("child2 class")
+class kid1(child1):
+    def k1show(self):
+        print("kid1 class")
+class kid2(child1):
+    def k2show(self):
+        print("kid2 class")
+class kkid1(child2): 
+    def kk1show(self):
+        print("kkid1 class")
+class kkid2(child2): 
+    def kk2show(self):
+        print("kkid2 class")
+c1=child1()
+c1.c1show()
+c1.pdisplay()
+c2=child2()
+c2.c2show()
+c2.pdisplay()
+k11=kid1()
+k11.k1show()
+k11.c1show()
+k11.pdisplay()
+k21=kid2()
+k21.k2show()
+k21.c1show()
+k21.pdisplay()
+k12=kkid1()
+k12.kk1show()
+k12.c2show()
+k12.pdisplay()
+k22=kkid2()
+k22.kk2show()
+k22.c2show()
+k22.pdisplay()
+
+o/p:
+----
+child1 class
+parent class
+child2 class
+parent class
+kid1 class
+child1 class
+parent class
+kid2 class
+child1 class
+parent class
+kkid1 class
+child2 class
+parent class
+kkid2 class
+child2 class
+parent class
+==============================================================
+
+
+
