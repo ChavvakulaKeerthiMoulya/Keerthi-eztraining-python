@@ -1,0 +1,113 @@
+4. polymorphism:
+   
+one item or same item used for different purpose
+types:
+-----
+1.overloading:
+  -----------
+  a.operator overloading:
+    --------------------
+    ->the '+' operator used for integer addition as well as 
+string concatination.
+
+  b.method overloading:
+    ------------------
+    ->add() method is used to take 1 or more arguments in the 
+same program.
+
+2.overriding:
+  -----------
+     -> if a method is defective or cannot be used inside 
+derived class it will take it from base class or parent class.
+
+
+================================================================
+Data structures:
+-----------------
+->helps to write efficient programs.
+
+->linear---array,linkedlist,stack,queue,matrix
+   storing data sequentially
+
+->non-linear---binary tree,heap,hush tables,graphs,sets
+   non sequential style required
+
+static--->array(size is fixed)
+dynamic-->list,stack,queue(size is mutable)
+
+--------------------------------------------------------
+linkedlist:
+-------------
+real time example is train
+
+-> as a name says list of items which are linked with one 
+another known as linkedlist.
+
+types:
+------
+1.singly linkedlist
+2.doubly linkedlist
+3.circular linkedlist
+
+every data --->nodes
+every nodes --->2 segments
+1-->data
+2-->address of next node
+but for last node 2nd segment(address)-->null
+1part-->head
+last part-->tail
+
+------------------------------------------------
+creating linkedlist:
+------------------
+step-1:create the node
+step-2:parition the node with 2 segments--data and none
+step-3:add value into the blank node
+step-4:mark the node as head
+step-5:create the next node by following the above steps
+step-6:establish the link between node1 and node2
+
+----------------------------------------------------
+display linkedlist:
+--------------------
+traversal is required from 1st node till tail node in order 
+to display existing linkedlist.
+
+--------------------------------------------------------------
+operations:
+-----------
+1.insert
+     a.beginning
+     b.end
+     c.position
+2.delete
+3.search
+
+============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
