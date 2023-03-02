@@ -1,0 +1,126 @@
+binary tree:
+--------------
+class btnode:
+    def __init__(self,data):
+        self.data=data
+        self.leftchild=None
+        self.rightchild=None
+node1=btnode(0)
+node2=btnode(1)
+node3=btnode(2)
+node4=btnode(11)
+node5=btnode(12)
+node6=btnode(21)
+node7=btnode(22)
+
+node1.leftchild=node2
+node1.rightchild=node3
+node2.leftchild=node4
+node2.rightchild=node5
+node3.leftchild=node6
+node3.rightchild=node7
+
+print(node1.data)
+print(node1.leftchild.data)
+print(node1.rightchild.data)
+print(node2.data)
+print(node2.leftchild.data)
+print(node2.rightchild.data)
+print(node3.data)
+print(node3.leftchild.data)
+print(node3.rightchild.data)
+
+o/p:
+----
+0
+1
+2
+1
+11
+12
+2
+21
+22
+================================================================
+tree traversal:
+------------------
+
+class node:
+    def __init__(self,key):
+        self.left=None
+        self.right=None
+        self.val=key
+def print_inorder(root):
+    if root:
+        print_inorder(root.left)
+        print(root.val,end=" ")
+        print_inorder(root.right)
+def print_postorder(root):
+    if root:
+        print_postorder(root.left)
+        print_postorder(root.right)
+        print(root.val,end=" ")
+def print_preorder(root):
+    if root:
+        print(root.val,end=" ")
+        print_preorder(root.left)
+        print_preorder(root.right)
+root=node(1)
+root.left=node(2)
+root.right=node(3)
+root.left.left=node(4)
+root.left.right=node(5)
+print("preorder:")
+print_preorder(root)
+print(" ")
+print("inorder:")
+print_inorder(root)
+print(" ")
+print("postorder:")
+print_postorder(root)
+print(" ")
+o/p:
+----
+preorder:
+1 2 4 5 3  
+inorder:
+4 2 5 1 3  
+postorder:
+4 5 2 3 1  
+================================================================
+binary search tree:
+-------------------
+class node:
+    def __init__(self,key):
+        self.left=None
+        self.right=None
+        self.val=key
+def insert(root,key):
+    if root is None:
+        return node(key)
+    else:
+        if root.val==key:
+            return root
+        elif root.val<key:  
+            root.right=insert(root.right,key)
+        else:
+            root.left=insert(root.left,key)
+    return root
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.val,end=" ")
+        inorder(root.right)
+r=node(50)            #         50           
+r=insert(r,30)        #       /    \         
+r=insert(r,20)        #      30     70
+r=insert(r,40)        #     / \     / \
+r=insert(r,70)        #   20  40  60  80
+r=insert(r,60)
+r=insert(r,80)
+inorder(r)
+
+o/p:
+---
+20 30 40 50 60 70 80 
+==============================================================
